@@ -5,13 +5,7 @@ public class Calculator {
     BinaryOperator<Integer> plus = (a, b) -> a + b;
     BinaryOperator<Integer> minus = (a, b) -> a - b;
     BinaryOperator<Integer> multiply = (a, b) -> a * b;
-    BinaryOperator<Integer> divide = (a, b) -> {
-            try {
-                return  a / b;
-            } catch (Exception e) {
-                throw new ArithmeticException("На ноль делить нельзя");
-            }
-    };
+    BinaryOperator<Integer> divide = (a, b) -> b == 0 ? 0 : a / b;
     UnaryOperator<Integer> pow = a -> a * a;
     UnaryOperator<Integer> abs = a -> a > 0 ? a : -a;
     Predicate<Integer> isPositive = a -> a > 0;
